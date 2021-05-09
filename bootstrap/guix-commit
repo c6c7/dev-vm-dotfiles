@@ -1,0 +1,9 @@
+Generation 3	Apr 27 2021 10:12:06	(current)
+  chckyn 41097ca
+    repository URL: https://github.com/chckyn/guix-channel.git
+    branch: main
+    commit: 41097ca4a5bc4e8d384d6537a4aff0777bdfadfb
+  guix 1b792e8
+    repository URL: https://git.savannah.gnu.org/git/guix.git
+    branch: master
+    commit: 1b792e8b5275dc010c53d91062082340431204f2
