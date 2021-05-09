@@ -10,10 +10,10 @@
   (keyboard-layout (keyboard-layout "us" "colemak"))
   (host-name "space-needle")
   (users (cons* (user-account
-                  (name "chcl")
+                  (name "c")
                   (comment "Charles Celerier")
                   (group "users")
-                  (home-directory "/home/chcl")
+                  (home-directory "/home/c")
                   (supplementary-groups
                     '("wheel" "netdev" "audio" "video")))
                 %base-user-accounts))
@@ -29,27 +29,25 @@
 		       (permit-root-login #f)
 		       (allow-empty-passwords? #t)
 		       (authorized-keys
-			 `(("chcl" ,(local-file "/home/chcl/.ssh/guix-allowed-keys/macbook-air-2020.pub"))))))
+			 `(("c" ,(local-file "/home/chcl/.bootstrap/macbook-air-2020.pub"))))))
             (service dhcp-client-service-type))
       %base-services))
   (bootloader
     (bootloader-configuration
       (bootloader grub-bootloader)
-      (target "/dev/sda")
+      (target "/dev/sdb")
       (keyboard-layout keyboard-layout)))
   (swap-devices
-    (list (uuid "33ed5682-c045-4e11-a952-5fbe38820841")))
+    (list (file-system-label "swap")))
   (file-systems
     (cons* (file-system
              (mount-point "/")
-             (device
-               (uuid "3674e568-9a1d-45ed-bf71-6c28c13a4db3"
-                     'ext4))
+             (device "root")
+	     (title 'label)
              (type "ext4"))
            (file-system
              (mount-point "/home")
-             (device
-               (uuid "33098d80-e20a-4964-8723-646fbbf9bf17"
-                     'ext4))
+             (device "home")
+	     (title 'label)
              (type "ext4"))
            %base-file-systems)))
