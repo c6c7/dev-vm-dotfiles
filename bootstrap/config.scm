@@ -1,14 +1,29 @@
 ;; This is an operating system configuration generated
 ;; by the graphical installer.
 
-(use-modules (gnu))
+(use-modules (gnu)
+             (gnu packages screen))
 (use-service-modules desktop networking ssh xorg)
 
 (operating-system
-  (locale "en_US.utf8")
+  (host-name "pike-place")
   (timezone "America/Los_Angeles")
+  (locale "en_US.utf8")
   (keyboard-layout (keyboard-layout "us" "colemak"))
-  (host-name "space-needle")
+
+  (bootloader
+    (bootloader-configuration
+      (bootloader grub-bootloader)
+      (target "/dev/sdf")
+      (keyboard-layout keyboard-layout)))
+
+  (file-systems
+    (cons* (file-system
+             (mount-point "/")
+             (device (file-system-label "guix-root"))
+             (type "ext4"))
+           %base-file-systems))
+
   (users (cons* (user-account
                   (name "c")
                   (comment "Charles Celerier")
@@ -17,37 +32,19 @@
                   (supplementary-groups
                     '("wheel" "netdev" "audio" "video")))
                 %base-user-accounts))
-  (packages
-    (append
-      (list (specification->package "nss-certs"))
-      %base-packages))
+  (packages (cons screen %base-packages))
+  (sudoers-file (plain-file "sudoers" "\
+root ALL=(ALL) ALL
+%wheel ALL=NOPASSWD: ALL\n"))
   (services
     (append
-      (list (service openssh-service-type
+      (list (service dhcp-client-service-type)
+            (service openssh-service-type
 		     (openssh-configuration
 		       (x11-forwarding? #f)
 		       (permit-root-login #f)
 		       (allow-empty-passwords? #t)
 		       (authorized-keys
-			 `(("c" ,(local-file "/home/chcl/.bootstrap/macbook-air-2020.pub"))))))
-            (service dhcp-client-service-type))
-      %base-services))
-  (bootloader
-    (bootloader-configuration
-      (bootloader grub-bootloader)
-      (target "/dev/sdb")
-      (keyboard-layout keyboard-layout)))
-  (swap-devices
-    (list (file-system-label "swap")))
-  (file-systems
-    (cons* (file-system
-             (mount-point "/")
-             (device "root")
-	     (title 'label)
-             (type "ext4"))
-           (file-system
-             (mount-point "/home")
-             (device "home")
-	     (title 'label)
-             (type "ext4"))
-           %base-file-systems)))
+			 `(("c" ,(local-file "macbook-air-2020.pub"))))))
+            )
+      %base-services)))
