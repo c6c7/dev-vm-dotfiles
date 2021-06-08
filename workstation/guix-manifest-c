@@ -5,9 +5,10 @@
 ;; See the "Replicating Guix" section in the manual.
 
 (specifications->manifest
-  (list "rcm"
-        "neovim-nightly"
+  (list "restic"
+        "rcm"
         "pinentry"
         "gnupg"
         "git"
+        "nss-certs"
         "tmux"))
