@@ -1,6 +1,6 @@
 [user]
-	email = dev@chckyn.org
+	email = charles@chckyn.org
 	name = Charles Celerier
-	signingkey = 21164C25323CEAF7611E49E69CFB4F28C311D53D
+	signingkey = 113AC364EB33D3022E5E6AE13748DFD0704E58C6
 [commit]
 	gpgsign = true
