@@ -1,0 +1,4 @@
+source "$HOME/.aws-restic-env"
+source "$HOME/.restic-env"
+
+restic "$@"

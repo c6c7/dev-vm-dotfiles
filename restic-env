@@ -1,0 +1,2 @@
+export RESTIC_REPOSITORY="s3:https://s3.amazonaws.com/restic-dev-vm-workstation"
+export RESTIC_PASSWORD="$(pass Restic/s3/dev-vm-workstation)"
