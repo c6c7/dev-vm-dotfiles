@@ -5,7 +5,9 @@
 ;; See the "Replicating Guix" section in the manual.
 
 (specifications->manifest
-  (list "make"
+  (list "rust-analyzer"
+        "clang-toolchain"
+        "make"
         "emacs-native-comp"
         "password-store"
         "restic"
