@@ -5,7 +5,8 @@
 ;; See the "Replicating Guix" section in the manual.
 
 (specifications->manifest
-  (list "emacs-native-comp"
+  (list "make"
+        "emacs-native-comp"
         "password-store"
         "restic"
         "rcm"
