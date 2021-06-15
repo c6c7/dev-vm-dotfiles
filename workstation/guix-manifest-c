@@ -5,7 +5,11 @@
 ;; See the "Replicating Guix" section in the manual.
 
 (specifications->manifest
-  (list "rust-analyzer"
+  (list "rust:rustfmt"
+        "rust:doc"
+        "rust:cargo"
+        "rust"
+        "rust-analyzer"
         "clang-toolchain"
         "make"
         "emacs-native-comp"
