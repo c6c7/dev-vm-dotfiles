@@ -14,7 +14,7 @@
   (bootloader
     (bootloader-configuration
       (bootloader grub-bootloader)
-      (target "/dev/nvme0n1")
+      (targets '("/dev/nvme0n1"))
       (keyboard-layout keyboard-layout)))
 
   (file-systems
