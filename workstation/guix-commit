@@ -1,5 +1,17 @@
-Generation 1	Jun 01 2021 08:03:43	(current)
-  guix 0b76b25
+Generation 9	Oct 26 2021 21:24:57	(current)
+  guix 89d8417
     repository URL: https://git.savannah.gnu.org/git/guix.git
     branch: master
-    commit: 0b76b25a0eff7a422f8ebcc8c095d7ede82c8863
+    commit: 89d8417b371f3918f0508bbc561675ec100a6add
+  chckyn 1b907bb
+    repository URL: https://github.com/chckyn/guix-channel.git
+    branch: main
+    commit: 1b907bb7105937e2ed5e298b782e8ef4c979905f
+  nonguix 0ce5f43
+    repository URL: https://gitlab.com/nonguix/nonguix.git
+    branch: master
+    commit: 0ce5f43c247e1b9e05d7a486d0aa4bbfe4f817fe
+  flat 10d19bc
+    repository URL: https://github.com/flatwhatson/guix-channel.git
+    branch: master
+    commit: 10d19bc59b624aec21c6e30ad11ca7d56c817aa3
