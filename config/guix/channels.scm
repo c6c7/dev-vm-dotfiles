@@ -12,9 +12,9 @@
         (branch "main")
         (introduction
          (make-channel-introduction
-          "daa642fbaa53e9b6f1cfd22ea013e5fdf4e17e3a"
+          "7813040c77c95feac5bbedc8662901b328e8c6ea"
           (openpgp-fingerprint
-           "2116 4C25 323C EAF7 611E  49E6 9CFB 4F28 C311 D53D"))))
+           "48DF 8AA6 1A14 7F31 461C  7418 EEE0 2AD4 6554 DBD1"))))
        (channel
         (name 'nonguix)
         (url "https://gitlab.com/nonguix/nonguix")
